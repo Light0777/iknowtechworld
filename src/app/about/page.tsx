@@ -54,7 +54,7 @@ const Page = () => {
             Our Mission
           </h2>
           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-            Kyro was created to build a space where diverse voices can explore topics ranging from technology and creativity to life's random wonders. We're committed to thoughtful, honest storytelling that informs, inspires, and connects.
+            Kyro was created to build a space where diverse voices can explore topics ranging from technology and creativity to life's random wonders. We&apos;re committed to thoughtful, honest storytelling that informs, inspires, and connects.
           </p>
         </div>
 

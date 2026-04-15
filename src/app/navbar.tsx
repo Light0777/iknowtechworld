@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
@@ -47,7 +48,7 @@ export default function Navbar() {
                                     <Link
                                         href="/"
                                         className="text-md font-light text-black dark:text-white flex items-center gap-1"
-                                    ><img src="/favicon.ico" alt="" className="h-4 w-4 rounded-full"/>
+                                    ><Image src="/favicon.ico" alt="" className="h-4 w-4 rounded-full"/>
                                         Kyro.com
                                     </Link>
                                     {navItems.map((item) => {
@@ -80,7 +81,7 @@ export default function Navbar() {
                             aria-label="Toggle menu"
                         >
                             <span className="text-md font-medium text-white dark:text-black flex items-center gap-1">
-                               <img src="/favicon.ico" alt="" className="h-4 w-4 rounded-full"/> Kyro.com
+                               <Image src="/favicon.ico" alt="" className="h-4 w-4 rounded-full"/> Kyro.com
                             </span>
                             {isOpen ? (
                                 <X className="w-5 h-5 text-white dark:text-black" />
