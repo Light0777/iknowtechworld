@@ -13,7 +13,7 @@ const Page = () => {
             About Kyro
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-black dark:text-white mb-6">
-            Stories, Ideas & Curiosity
+            Stories, Ideas &amp; Curiosity
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             We believe that everyone has a story worth sharing. Kyro is where thoughts turn into stories and ideas find a voice.
@@ -54,7 +54,7 @@ const Page = () => {
             Our Mission
           </h2>
           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-            Kyro was created to build a space where diverse voices can explore topics ranging from technology and creativity to life's random wonders. We are committed to thoughtful, honest storytelling that informs, inspires, and connects.
+            Kyro was created to build a space where diverse voices can explore topics ranging from technology and creativity to life&apos;s random wonders. We are committed to thoughtful, honest storytelling that informs, inspires, and connects.
           </p>
         </div>
 
@@ -92,7 +92,7 @@ const Page = () => {
             Join Our Journey
           </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
-            Whether you're here to learn, to be entertained, or to find your next great read — welcome. We're glad you're here.
+            Whether you&apos;re here to learn, to be entertained, or to find your next great read — welcome. We&apos;re glad you&apos;re here.
           </p>
           <Link 
             href="/blogpage"
