@@ -1,7 +1,7 @@
+import Navbar from "@/app/navbar";
 import { BlogPostContent } from "@/components/BlogPostContent";
 import { CommentSection } from "@/components/CommentSection";
 import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
 import { RelatedPosts } from "@/components/RelatedPosts";
 import { config } from "@/config";
 import { signOgImageUrl } from "@/lib/og-image";
@@ -73,11 +73,11 @@ const Page = async (props: { params: Promise<Params> }) => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="container mx-auto px-5">
-        <Header />
-        <div className="max-w-prose mx-auto text-xl">
+        <Navbar />
+        <div className="max-w-prose mx-auto text-xl mt-0 sm:-mt-20">
           <BlogPostContent post={result.post} />
           <RelatedPosts posts={posts} />
-          <CommentSection slug={slug} />
+          <CommentSection slug={params.slug} />
         </div>
         <Footer />
       </div>

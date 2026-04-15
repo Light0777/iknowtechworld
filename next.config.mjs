@@ -6,6 +6,20 @@ const nextConfig = {
         protocol: "https",
         hostname: "imagedelivery.net",
       },
+
+      {
+        protocol: 'https',
+        hostname: 'i.pinimg.com',
+        port: '',
+        pathname: '/**',
+      },
+
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
   redirects: async () => {

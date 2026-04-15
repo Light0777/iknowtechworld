@@ -74,7 +74,12 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily: {
+        // Primary sans font (Inter)
         sans: ["var(--font-sans)", ...fontFamily.sans],
+        // Script font (Style Script)
+        script: ["var(--font-script)", "cursive", "Brush Script MT", "Georgia"],
+        // Optional: Keep mono for code blocks
+        mono: ["var(--font-mono)", ...fontFamily.mono],
       },
     },
   },

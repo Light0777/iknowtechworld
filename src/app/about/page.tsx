@@ -1,59 +1,110 @@
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
-import { config } from "@/config";
-import { signOgImageUrl } from "@/lib/og-image";
-import Markdown from "react-markdown";
+import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Footer } from '@/components/Footer'
 
-const content = `# About Me
-
-![Samantha](https://imagedelivery.net/lLmNeOP7HXG0OqaG97wimw/clvlugru90000o4g8ahxp069s/db7abbe3-aa5c-433e-a16d-cbf137d1c9e5.png/public)
-
-Hey there! I'm Samantha, a 28-year-old former corporate warrior who decided to ditch the 9-to-5 grind and embark on an adventure of a lifetime. After years of hustling in a high-pressure job, I realized that life is too short to be stuck in an office, staring at spreadsheets all day.
-
-So I took a leap of faith, quit my cushy job in Singapore, and decided to see the world on my own terms. No more stuffy meetings or rigid schedules – just me, my backpack, and an open road ahead.
-
-![Samantha](https://imagedelivery.net/lLmNeOP7HXG0OqaG97wimw/clvlugru90000o4g8ahxp069s/6b080e65-2329-4a36-ad5c-0a6af8d9aeb1.png/public)
-
-This blog is where I'll be documenting my travels, sharing my experiences, and hopefully inspiring others to follow their wanderlust. From trekking through remote villages to savoring local cuisines, I'm on a mission to immerse myself in different cultures and create memories that will last a lifetime.
-
-But this journey isn't just about checking off destinations from a bucket list. It's about self-discovery, personal growth, and finding the courage to live life on my own terms. I'll be honest and raw, sharing the highs and lows, the moments of pure bliss and the inevitable challenges that come with solo travel.
-
-So join me on this adventure, and let's explore the world together! Who knows, maybe my stories will inspire you to take that leap of faith and pursue your own dreams, whatever they may be.
-
-Let's go on an adventure!
-
-Love,
-
-Samantha`;
-
-export async function generateMetadata() {
-  return {
-    title: "About Me",
-    description: "Learn more about Samantha and her travel adventures",
-    openGraph: {
-      title: "About Me",
-      description: "Learn more about Samantha and her travel adventures",
-      images: [
-        signOgImageUrl({
-          title: "Samantha",
-          label: "About Me",
-          brand: config.blog.name,
-        }),
-      ],
-    },
-  };
-}
-
-const Page = async () => {
+const Page = () => {
   return (
-    <div className="container mx-auto px-5">
-      <Header />
-      <div className="prose lg:prose-lg dark:prose-invert m-auto mt-20 mb-10 blog-content">
-        <Markdown>{content}</Markdown>
+    <div className="min-h-screen py-20 px-4">
+      <div className="max-w-4xl mx-auto">
+        {/* Hero Section */}
+        <div className="text-center mb-16">
+          <span className="font-script text-3xl md:text-4xl text-gray-600 dark:text-gray-400 block mb-4">
+            About Kyro
+          </span>
+          <h1 className="text-4xl md:text-6xl font-bold text-black dark:text-white mb-6">
+            Stories, Ideas & Curiosity
+          </h1>
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            We believe that everyone has a story worth sharing. Kyro is where thoughts turn into stories and ideas find a voice.
+          </p>
+        </div>
+
+        {/* Image Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16">
+          <div className="relative aspect-square rounded-2xl overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&h=800&fit=crop"
+              alt="Writing"
+              fill
+              className="object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div className="relative aspect-square rounded-2xl overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&h=800&fit=crop"
+              alt="Ideas"
+              fill
+              className="object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div className="relative aspect-square rounded-2xl overflow-hidden hidden md:block">
+            <Image
+              src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=800&fit=crop"
+              alt="Curiosity"
+              fill
+              className="object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
+
+        {/* Mission Section */}
+        <div className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-4">
+            Our Mission
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+            Kyro was created to build a space where diverse voices can explore topics ranging from technology and creativity to life's random wonders. We're committed to thoughtful, honest storytelling that informs, inspires, and connects.
+          </p>
+        </div>
+
+        {/* What We Do */}
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div>
+            <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
+              Curated Content
+            </h3>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">
+              Thoughtfully crafted articles that inform, inspire, and spark meaningful conversations.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
+              Community Voices
+            </h3>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">
+              A platform for emerging writers and thinkers to share their unique perspectives.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
+              Honest Conversations
+            </h3>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">
+              Real talk about real topics that matter — from tech to creativity and everything between.
+            </p>
+          </div>
+        </div>
+
+        {/* Team Section */}
+        <div className="text-center border-t border-gray-200 dark:border-gray-800 pt-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-4">
+            Join Our Journey
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
+            Whether you're here to learn, to be entertained, or to find your next great read — welcome. We're glad you're here.
+          </p>
+          <Link 
+            href="/blogpage"
+            className="inline-block px-8 py-3 bg-black dark:bg-white text-white dark:text-black rounded-full hover:opacity-80 transition-opacity"
+          >
+            Read Our Stories
+          </Link>
+        </div>
       </div>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page
