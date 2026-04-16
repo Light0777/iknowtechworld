@@ -7,8 +7,11 @@ import { config } from "@/config";
 import { signOgImageUrl } from "@/lib/og-image";
 import { wisp } from "@/lib/wisp";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import type { BlogPosting, WithContext } from "schema-dts";
 import AdUnit from "../../components/AdUnit";
+import ViewCounter from "../../components/ViewCounter";
+import PostMeta from "@/app/components/PostMeta";
 
 export async function generateMetadata(props: { params: Promise<Params> }) {
   const params = await props.params;
@@ -75,21 +78,38 @@ const Page = async (props: { params: Promise<Params> }) => {
       />
       <div className="container mx-auto px-5">
         <Navbar />
-        <div className="max-w-prose mx-auto text-xl mt-0 sm:-mt-20">
+        <div className="max-w-prose mx-auto text-xl mt-0">
+          {/* Post metadata only - title will come from BlogPostContent */}
+          <div className="mb-8 sm:mb-2">
+            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+              <PostMeta publishedAt={result.post.publishedAt!} slug={result.post.slug} />
+              <span className="flex gap-2 items-center">
+                <Image 
+                  src="/favicon.ico" 
+                  alt="" 
+                  width={16}
+                  height={16} 
+                  className="h-4 w-4 rounded-full" 
+                /> 
+                {author?.name || 'Kyro Team'}
+              </span>
+            </div>
+          </div>
+
           <BlogPostContent post={result.post} />
-          
+
           {/* Ad after blog content */}
           <div className="my-8">
             <AdUnit slot="YOUR_POST_CONTENT_AD_SLOT" format="horizontal" />
           </div>
-          
+
           <RelatedPosts posts={posts} />
-          
+
           {/* Ad before comments */}
           <div className="my-8">
             <AdUnit slot="YOUR_POST_COMMENTS_AD_SLOT" format="horizontal" />
           </div>
-          
+
           <CommentSection slug={params.slug} />
         </div>
         <Footer />
