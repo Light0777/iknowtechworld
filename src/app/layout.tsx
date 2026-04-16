@@ -4,7 +4,6 @@ import { Inter, Style_Script } from "next/font/google";
 import { Providers } from "@/app/providers";
 import { Toaster } from "@/components/ui/toaster";
 import Navbar from "./navbar";
-import GoogleAdsense from "./components/GoogleAdsense";
 import "./globals.css";
 
 // Primary font for body text and UI
@@ -87,6 +86,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* AdSense script - placed directly in head for verification */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9635487371462309"
+          crossOrigin="anonymous"
+        />
+        {/* Meta tag verification (alternative method) */}
+        <meta name="google-adsense-account" content="ca-pub-9635487371462309" />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
@@ -99,7 +108,6 @@ export default function RootLayout({
           <main className="w-full mx-auto p-4">{children}</main>
           <Toaster />
         </Providers>
-        {process.env.NODE_ENV === 'production' && <GoogleAdsense />}
       </body>
     </html>
   );
