@@ -1,5 +1,3 @@
-import { config } from "@/config";
-import { signOgImageUrl } from "@/lib/og-image";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter, Style_Script } from "next/font/google";
@@ -27,20 +25,58 @@ const fontScript = Style_Script({
 
 export const metadata: Metadata = {
   title: {
-    absolute: config.blog.metadata.title.absolute,
-    default: config.blog.metadata.title.default,
-    template: config.blog.metadata.title.template,
+    default: "Kyro | Stories, Ideas & Curiosity in One Place",
+    template: "%s | Kyro",
   },
-  description: config.blog.metadata.description,
+  description: "Kyro is where thoughts turn into stories and ideas find a voice. Explore blogs on technology, creativity, and life's random wonders.",
+  keywords: ["blog", "stories", "ideas", "curiosity", "technology", "creativity", "writing", "Kyro"],
+  authors: [{ name: "Kyro Team" }],
+  creator: "Kyro",
+  publisher: "Kyro Media",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: config.blog.metadata.title.default,
-    description: config.blog.metadata.description,
+    title: "Kyro | Stories, Ideas & Curiosity in One Place",
+    description: "Kyro is where thoughts turn into stories and ideas find a voice. Explore blogs on technology, creativity, and life's random wonders.",
+    url: "https://kyro.com",
+    siteName: "Kyro",
+    locale: "en_US",
+    type: "website",
     images: [
-      signOgImageUrl({
-        title: config.blog.name,
-      }),
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Kyro - Stories, Ideas & Curiosity",
+      },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kyro | Stories, Ideas & Curiosity in One Place",
+    description: "Kyro is where thoughts turn into stories and ideas find a voice.",
+    images: ["/og-image.jpg"],
+    creator: "@kyro",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
+  verification: {
+    google: "your-google-verification-code", // Add your Google Search Console code here
+  },
+  category: "blog",
 };
 
 export default function RootLayout({
