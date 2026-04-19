@@ -83,7 +83,7 @@ export default function Navbar() {
                         >
                             <span className="text-md font-medium text-white dark:text-black flex items-center gap-1">
                                 <Image src="/favicon.ico" alt="" className="h-4 w-4 rounded-full" width={4}
-                                    height={4} /> Kyro.com
+                                    height={4} /> <span>{process.env.NEXT_PUBLIC_BLOG_DISPLAY_NAME}</span>
                             </span>
                             {isOpen ? (
                                 <X className="w-5 h-5 text-white dark:text-black" />
