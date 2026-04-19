@@ -10,7 +10,7 @@ const Page = () => {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <span className="font-script text-3xl md:text-4xl text-gray-600 dark:text-gray-400 block mb-4">
-            About Kyro
+            About <span>{process.env.NEXT_PUBLIC_BLOG_DISPLAY_NAME}</span>
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-black dark:text-white mb-6">
             Stories, Ideas &amp; Curiosity
@@ -54,7 +54,7 @@ const Page = () => {
             Our Mission
           </h2>
           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-            Kyro was created to build a space where diverse voices can explore topics ranging from technology and creativity to life&apos;s random wonders. We are committed to thoughtful, honest storytelling that informs, inspires, and connects.
+            <span>{process.env.NEXT_PUBLIC_BLOG_DISPLAY_NAME}</span> was created to build a space where diverse voices can explore topics ranging from technology and creativity to life&apos;s random wonders. We are committed to thoughtful, honest storytelling that informs, inspires, and connects.
           </p>
         </div>
 

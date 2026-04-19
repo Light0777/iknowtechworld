@@ -41,7 +41,7 @@ const Home = () => {
         <div className="min-h-screen transition-colors duration-300">
             <div className="text-center px-4 max-w-6xl mx-auto">
                 <span className="font-script text-2xl sm:text-3xl md:text-5xl block text-black dark:text-white">
-                    Welcome to Kyro
+                    Welcome to <span>{process.env.NEXT_PUBLIC_BLOG_DISPLAY_NAME}</span>
                 </span>
                 <h1 className="text-3xl md:text-7xl font-bold mt-4 text-black dark:text-white">
                     Stories, Ideas & Curiosity in One Place

@@ -12,6 +12,9 @@ import type { BlogPosting, WithContext } from "schema-dts";
 import AdUnit from "../../components/AdUnit";
 import ViewCounter from "../../components/ViewCounter";
 import PostMeta from "@/app/components/PostMeta";
+import { ContentWithCustomComponents } from "@wisp-cms/react-custom-component";
+import AffiliateBanner from "../../components/AffiliateBanner";
+import { CustomBlogPostContent } from "@/app/components/CustomBlogPostContent";
 
 export async function generateMetadata(props: { params: Promise<Params> }) {
   const params = await props.params;
@@ -84,20 +87,23 @@ const Page = async (props: { params: Promise<Params> }) => {
             <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
               <PostMeta publishedAt={result.post.publishedAt!} slug={result.post.slug} />
               <span className="flex gap-2 items-center">
-                <Image 
-                  src="/favicon.ico" 
-                  alt="" 
+                <Image
+                  src="/favicon.ico"
+                  alt=""
                   width={16}
-                  height={16} 
-                  className="h-4 w-4 rounded-full" 
-                /> 
+                  height={16}
+                  className="h-4 w-4 rounded-full"
+                />
                 {author?.name || 'Kyro Team'}
               </span>
             </div>
           </div>
 
-          <BlogPostContent post={result.post} />
-
+          {/* <BlogPostContent post={result.post} /> */}
+          <CustomBlogPostContent
+            post={result.post}
+            customComponents={{ AffiliateBanner }}
+          />
           {/* Ad after blog content */}
           <div className="my-8">
             <AdUnit slot="YOUR_POST_CONTENT_AD_SLOT" format="horizontal" />
