@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "iknowtechworld | Stories, Ideas & Curiosity in One Place",
     description: "iknowtechworld is where thoughts turn into stories and ideas find a voice. Explore blogs on technology, creativity, and life's random wonders.",
-    url: "https://iknowtechworld.com",
+    url: "https://www.iknowtechworld.com",
     siteName: "iknowtechworld",
     locale: "en_US",
     type: "website",
@@ -73,9 +73,9 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
-  verification: {
-    google: "your-google-verification-code", // Add your Google Search Console code here
-  },
+  // verification: {
+  //   google: "your-google-verification-code",
+  // },
   category: "blog",
 };
 
