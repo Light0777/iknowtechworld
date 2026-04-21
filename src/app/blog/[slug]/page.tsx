@@ -15,6 +15,7 @@ import PostMeta from "@/app/components/PostMeta";
 import { ContentWithCustomComponents } from "@wisp-cms/react-custom-component";
 import AffiliateBanner from "../../components/AffiliateBanner";
 import { CustomBlogPostContent } from "@/app/components/CustomBlogPostContent";
+import InternalLinkBox from "../../components/InternalLinkBox";
 
 export async function generateMetadata(props: { params: Promise<Params> }) {
   const params = await props.params;
@@ -102,7 +103,7 @@ const Page = async (props: { params: Promise<Params> }) => {
           {/* <BlogPostContent post={result.post} /> */}
           <CustomBlogPostContent
             post={result.post}
-            customComponents={{ AffiliateBanner }}
+            customComponents={{ AffiliateBanner, InternalLinkBox }}
           />
           {/* Ad after blog content */}
           <div className="my-8">

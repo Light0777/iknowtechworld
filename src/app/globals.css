@@ -103,3 +103,17 @@
 .dark .prose img {
   opacity: 0.9;
 }
+
+/* Internal link box animations */
+.internal-link-box {
+  transition: all 0.3s ease;
+}
+
+.internal-link-box:hover {
+  transform: translateX(4px);
+}
+
+/* Dark mode adjustments */
+.dark .internal-link-box {
+  border-left-color: #8b5cf6;
+}
