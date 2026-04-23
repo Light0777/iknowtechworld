@@ -18,7 +18,7 @@ export default function AffiliateBanner({
   description,
   link,
   price,
-  buttonText = "Shop Now →"
+  buttonText = "Shop Now"
 }: AffiliateBannerProps) {
   return (
     <div className="my-6 border border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-900/50 shadow-sm hover:shadow-md transition-all not-prose overflow-hidden">
@@ -27,7 +27,7 @@ export default function AffiliateBanner({
         {/* Top section with image and title */}
         <div className="flex items-start gap-3 mb-3">
           {imageUrl && (
-            <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
+            <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 -mt-[1.5rem] sm:-mt-[2.5rem]">
               <Image
                 src={imageUrl}
                 alt={title}
