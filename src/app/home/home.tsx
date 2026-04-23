@@ -18,7 +18,7 @@ const Home = () => {
         { title: "Decorative Pillows: 2026's Hottest Home Decor Trend (+ DIY Ideas)", slug: "decorative-pillows-trend-2026-diy" },
         { title: "Best GTA 6 Setup Under ₹24.8K", slug: "best-gta-6-setup-under-24800" },
         { title: "GTA 6 Smart Creator Setup Under ₹45K", slug: "gta-6-smart-creator-setup-under-45000" },
-        { title: "GTA 6 Best Value Setup Under ₹60k - Future Proofing", slug: "gta-6-best-value-setup-60000" },
+        { title: "GTA 6 Best Value Setup Under ₹60k - Future Proofing", slug: "gta-6-best-value-setup-under-60000" },
         { title: "Digital Marketing Trends", slug: "digital-marketing-trends" },
         { title: "The Art of Minimalism", slug: "art-of-minimalism" },
         { title: "Sustainable Living Guide", slug: "sustainable-living-guide" },
