@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import Navbar from "./navbar";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
 
 // Primary font for body text and UI
@@ -28,14 +29,14 @@ const fontScript = Style_Script({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.iknowtechworld.online"),
   title: {
-    default: process.env.NEXT_PUBLIC_BLOG_DISPLAY_NAME || "iknowtechworld",
-    template: "%s | iknowtechworld",
+    default: process.env.NEXT_PUBLIC_BLOG_DISPLAY_NAME || "I Know Tech World",
+    template: "%s | I Know Tech World",
   },
-  description: "iknowtechworld is where thoughts turn into stories and ideas find a voice. Explore blogs on technology, creativity, and life's random wonders.",
-  keywords: ["blog", "stories", "ideas", "curiosity", "technology", "creativity", "writing", "iknowtechworld"],
-  authors: [{ name: "iknowtechworld Team" }],
-  creator: "iknowtechworld",
-  publisher: "iknowtechworld Media",
+  description: "Smart tech guides, gaming builds, and digital trends that actually help. Helping regular people make better tech decisions.",
+  keywords: ["tech blog india", "budget gaming pc", "gta 6 setup", "buying guides", "gadget recommendations", "AI tools", "tech trends", "beginner tech guides", "smart purchases"],
+  authors: [{ name: "I Know Tech World Team" }],
+  creator: "I Know Tech World",
+  publisher: "I Know Tech World Media",
   robots: {
     index: true,
     follow: true,
@@ -48,25 +49,25 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "iknowtechworld | Stories, Ideas & Curiosity in One Place",
-    description: "iknowtechworld is where thoughts turn into stories and ideas find a voice. Explore blogs on technology, creativity, and life's random wonders.",
-    url: "https://www.iknowtechworld.com",
-    siteName: "iknowtechworld",
-    locale: "en_US",
+    title: "I Know Tech World | Smart Tech Guides & Gaming Builds",
+    description: "Practical buying guides, budget PC setups, gadget recommendations, AI tools, and tech insights — explained simply.",
+    url: "https://www.iknowtechworld.online",
+    siteName: "I Know Tech World",
+    locale: "en_IN",
     type: "website",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "iknowtechworld - Stories, Ideas & Curiosity",
+        alt: "I Know Tech World - Smart Tech Guides That Actually Help",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "iknowtechworld | Stories, Ideas & Curiosity in One Place",
-    description: "iknowtechworld is where thoughts turn into stories and ideas find a voice.",
+    title: "I Know Tech World | Tech Guides & Gaming Builds",
+    description: "Helping regular people make better tech decisions.",
     images: ["/og-image.jpg"],
     creator: "@iknowtechworld",
   },
@@ -76,7 +77,7 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
-  category: "blog",
+  category: "technology",
 };
 
 export default function RootLayout({
@@ -128,6 +129,10 @@ export default function RootLayout({
           <SpeedInsights />
         </Providers>
       </body>
+      {/* Google Analytics - only loads in production */}
+      {process.env.NODE_ENV === 'production' && (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
+      )}
     </html>
   );
 }
