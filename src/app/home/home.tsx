@@ -169,6 +169,8 @@ const CATEGORIES = [
     { label: 'Tech Guides', icon: <IoHardwareChipOutline size={18} />, slug: 'tech' },
 ]
 
+const INFINITE_CATEGORIES = [...CATEGORIES, ...CATEGORIES, ...CATEGORIES];
+
 // ─── Page (async Server Component) ───────────────────────────────────────────
 export default async function Home() {
     const posts = await getLatestPosts(4)
@@ -187,35 +189,52 @@ export default async function Home() {
                         { icon: <IoShieldCheckmarkOutline size={16} />, text: 'No paid promotions' },
                         { icon: <IoFlashOutline size={16} />, text: 'Updated regularly' },
                     ].map(({ icon, text }) => (
-                        <span key={text} className="inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400">
+                        <span key={text} className="sm:inline-flex items-center gap-1.5 hidden text-sm text-gray-500 dark:text-gray-400">
                             <span className="text-blue-600">{icon}</span>
                             {text}
                         </span>
                     ))}
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-tight">
+                <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-tight">
                     Budget Tech Guides<br />
                     <span className="text-blue-600 dark:text-blue-400">for Gamers & Students</span>
                 </h1>
 
-                <p className="mt-4 text-lg text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
-                    Honest buying guides, gaming PC builds, and gadget picks — all under a real budget.
+                <p className="mt-4 text-xs sm:text-md text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
+                    Honest buying guides, gaming PC builds, and gadget picks all under a real budget.
                 </p>
 
                 {/* Category quick-nav */}
-                <nav aria-label="Browse by category" className="mt-8 flex flex-wrap justify-center gap-3">
-                    {CATEGORIES.map(({ label, icon, slug }) => (
-                        <Link
-                            key={slug}
-                            href={`/blogpage?tag=${slug}`}
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/60 text-sm font-medium text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-                        >
-                            <span className="text-blue-600 dark:text-blue-400">{icon}</span>
-                            {label}
-                        </Link>
-                    ))}
-                </nav>
+                <div className="relative">
+                    {/* Left fade effect */}
+                    <div className="absolute -left-1 top-0 bottom-0 w-12 bg-gradient-to-r from-white dark:from-[#09090b] to-transparent z-10 pointer-events-none"></div>
+
+                    {/* Right fade effect */}
+                    <div className="absolute -right-1 top-0 bottom-0 w-12 bg-gradient-to-l from-white dark:from-[#09090b] to-transparent z-10 pointer-events-none"></div>
+
+                    <nav
+                        aria-label="Browse by category"
+                        className="mt-8 overflow-x-auto scrollbar-thin hide-scrollbar scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 hover:scrollbar-thumb-gray-400 dark:hover:scrollbar-thumb-gray-500"
+                        style={{
+                            scrollBehavior: 'smooth',
+                            WebkitOverflowScrolling: 'touch'
+                        }}
+                    >
+                        <div className="flex flex-nowrap gap-3 px-4 animate-scroll hover:animation-pause">
+                            {INFINITE_CATEGORIES.map(({ label, icon, slug }, index) => (
+                                <Link
+                                    key={`${slug}-${index}`}
+                                    href={`/blogpage?tag=${slug}`}
+                                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/60 text-sm font-medium text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 flex-shrink-0"
+                                >
+                                    <span className="text-blue-600 dark:text-blue-400">{icon}</span>
+                                    {label}
+                                </Link>
+                            ))}
+                        </div>
+                    </nav>
+                </div>
             </section>
 
             {/* ── POSTS GRID ───────────────────────────────────────────────── */}
