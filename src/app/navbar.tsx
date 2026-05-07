@@ -12,6 +12,13 @@ const navItems = [
     { name: "About", href: "/about" },
 ];
 
+const legalItems = [
+    { name: "Contact", href: "/legal/contact" },
+    { name: "Privacy Policy", href: "/legal/privacy-policy" },
+    { name: "Disclaimer", href: "/legal/disclaimer" },
+    { name: "Terms & Conditions", href: "/legal/terms" },
+];
+
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const pathname = usePathname();
@@ -43,7 +50,7 @@ export default function Navbar() {
                             {/* Logo - Left side on desktop */}
 
                             {/* Desktop Navigation - Perfectly Centered */}
-                            <div className="hidden md:flex items-center justify-center absolute left-1/2 transform -translate-x-1/2 mt-5">
+                            <div className="hidden md:flex items-center justify-center mt-5">
                                 <div className="flex items-center gap-8">
                                     <Link
                                         href="/"
@@ -53,6 +60,21 @@ export default function Navbar() {
                                         <span>{process.env.NEXT_PUBLIC_BLOG_DISPLAY_NAME}</span>
                                     </Link>
                                     {navItems.map((item) => {
+                                        const isActive = pathname === item.href;
+                                        return (
+                                            <Link
+                                                key={item.name}
+                                                href={item.href}
+                                                className={`text-light transition-colors hover:text-black dark:hover:text-white ${isActive
+                                                    ? "text-black dark:text-white"
+                                                    : "text-gray-600 dark:text-gray-400"
+                                                    }`}
+                                            >
+                                                {item.name}
+                                            </Link>
+                                        );
+                                    })}
+                                    {legalItems.map((item) => {
                                         const isActive = pathname === item.href;
                                         return (
                                             <Link
@@ -106,6 +128,22 @@ export default function Navbar() {
 
                     {/* Mobile Navigation Links */}
                     {navItems.map((item) => {
+                        const isActive = pathname === item.href;
+                        return (
+                            <Link
+                                key={item.name}
+                                href={item.href}
+                                onClick={() => setIsOpen(false)}
+                                className={`text-2xl transition-colors hover:text-gray-600 dark:hover:text-gray-400 ${isActive
+                                    ? "text-black dark:text-white"
+                                    : "text-gray-600 dark:text-gray-400"
+                                    }`}
+                            >
+                                {item.name}
+                            </Link>
+                        );
+                    })}
+                    {legalItems.map((item) => {
                         const isActive = pathname === item.href;
                         return (
                             <Link

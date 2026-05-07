@@ -17,6 +17,10 @@ import {
     IoTimeOutline,
     IoNewspaperOutline,
 } from 'react-icons/io5'
+import WhatWeCover from './components/whatWeCover'
+import WhyTrustUs from './components/whyTrustUs'
+import BudgetPc from './components/budgetPc'
+import FeaturedGuide from './components/featuredGuide'
 
 // ─── Wisp types (subset we actually use) ─────────────────────────────────────
 interface WispPost {
@@ -283,6 +287,13 @@ export default async function Home() {
                     </Link>
                 </div>
             </main>
+
+            <div>
+                <WhatWeCover />
+                <BudgetPc />
+                <FeaturedGuide />
+                <WhyTrustUs />
+            </div>
 
             {/* ── WHY US ───────────────────────────────────────────────────── */}
             <section className="border-t border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#09090b]">
