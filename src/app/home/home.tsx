@@ -21,6 +21,7 @@ import WhatWeCover from './components/whatWeCover'
 import WhyTrustUs from './components/whyTrustUs'
 import BudgetPc from './components/budgetPc'
 import FeaturedGuide from './components/featuredGuide'
+import NewsletterPopup from './components/NewsletterPopup'
 
 // ─── Wisp types (subset we actually use) ─────────────────────────────────────
 interface WispPost {
@@ -294,6 +295,7 @@ export default async function Home() {
                 <FeaturedGuide />
                 <WhyTrustUs />
             </div>
+            <NewsletterPopup />
 
             {/* ── WHY US ───────────────────────────────────────────────────── */}
             <section className="border-t border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#09090b]">

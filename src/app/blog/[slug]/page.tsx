@@ -18,6 +18,7 @@ import { CustomBlogPostContent } from "@/app/components/CustomBlogPostContent";
 import InternalLinkBox from "../../components/InternalLinkBox";
 import Script from "next/script";
 import ProductTable from "@/app/components/ProductTable";
+import ComparisonTable from "@/app/home/components/ComparisonTable";
 
 export async function generateMetadata(props: { params: Promise<Params> }) {
   const params = await props.params;
@@ -143,7 +144,7 @@ const Page = async (props: { params: Promise<Params> }) => {
 
           <CustomBlogPostContent
             post={result.post}
-            customComponents={{ AffiliateBanner, InternalLinkBox, ProductTable }}
+            customComponents={{ AffiliateBanner, InternalLinkBox, ProductTable, ComparisonTable }}
           />
           
           <div className="my-8">
