@@ -188,7 +188,7 @@ export default async function Home() {
             <section className="max-w-5xl mx-auto px-4 pt-14 pb-10 text-center">
 
                 {/* Trust bar */}
-                <div className="inline-flex flex-wrap justify-center gap-x-6 gap-y-2 mb-6">
+                {/* <div className="inline-flex flex-wrap justify-center gap-x-6 gap-y-2 mb-6">
                     {[
                         { icon: <IoWalletOutline size={16} />, text: 'Budget-first picks' },
                         { icon: <IoShieldCheckmarkOutline size={16} />, text: 'No paid promotions' },
@@ -199,16 +199,16 @@ export default async function Home() {
                             {text}
                         </span>
                     ))}
-                </div>
+                </div> */}
 
                 <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-tight">
                     Game Reviews & Guides<br />
                     <span className="text-[#ff3131]">for Every Gamer</span>
                 </h1>
 
-                <p className="mt-4 text-xs sm:text-md text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
+                {/* <p className="mt-4 text-xs sm:text-md text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
                     Honest game reviews, walkthroughs, tips, and news — everything worth knowing about the games you play.
-                </p>
+                </p> */}
 
             
             </section>
