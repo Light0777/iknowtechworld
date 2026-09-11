@@ -87,13 +87,13 @@ export default function PrivacyPolicyPage() {
 
         <div className="relative max-w-4xl mx-auto px-4 pt-20 pb-16 text-center">
           {/* Eyebrow */}
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-4">
+          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#ff3131] dark:text-[#ff3131] mb-4">
             Legal
           </span>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-tight mb-6">
             Privacy{' '}
-            <span className="text-blue-600 dark:text-blue-400">Policy.</span>
+            <span className="text-[#ff3131] dark:text-[#ff3131]">Policy.</span>
             <br />
             Your data,{' '}
             <span className="text-teal-500 dark:text-teal-400">your trust.</span>
@@ -113,7 +113,7 @@ export default function PrivacyPolicyPage() {
         <div className="max-w-4xl mx-auto px-4 py-10 grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
           {STATS.map(({ value, label }) => (
             <div key={label}>
-              <p className="text-3xl font-extrabold text-blue-600 dark:text-blue-400 tabular-nums">
+              <p className="text-3xl font-extrabold text-[#ff3131] dark:text-[#ff3131] tabular-nums">
                 {value}
               </p>
               <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{label}</p>
@@ -126,7 +126,7 @@ export default function PrivacyPolicyPage() {
       <section className="border-t border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/40">
         <div className="max-w-4xl mx-auto px-4 py-16">
           <div className="text-center mb-10">
-            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">
+            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#ff3131] dark:text-[#ff3131] mb-3">
               Our commitment
             </span>
             <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white">
@@ -143,7 +143,7 @@ export default function PrivacyPolicyPage() {
                 key={title}
                 className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 p-6 flex flex-col gap-3 hover:shadow-md transition-shadow duration-200"
               >
-                <span className="text-blue-600 dark:text-blue-400">{icon}</span>
+                <span className="text-[#ff3131] dark:text-[#ff3131]">{icon}</span>
                 <h3 className="font-bold text-gray-900 dark:text-white text-lg">{title}</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{body}</p>
               </div>
@@ -155,7 +155,7 @@ export default function PrivacyPolicyPage() {
       {/* ── SUMMARY / REASSURANCE SECTION (similar to "Values" on About page) */}
       <section className="max-w-4xl mx-auto px-4 py-16">
         <div className="text-center mb-10">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">
+          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#ff3131] dark:text-[#ff3131] mb-3">
             The bottom line
           </span>
           <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white">
@@ -168,7 +168,7 @@ export default function PrivacyPolicyPage() {
 
         <div className="grid sm:grid-cols-3 gap-8">
           <div className="flex flex-col items-center text-center gap-3">
-            <span className="p-3 rounded-2xl bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400">
+            <span className="p-3 rounded-2xl bg-red-100 dark:bg-red-900/40 text-[#ff3131] dark:text-[#ff3131]">
               <IoShieldOutline size={22} />
             </span>
             <h3 className="font-bold text-gray-900 dark:text-white">We don't sell data</h3>
@@ -177,7 +177,7 @@ export default function PrivacyPolicyPage() {
             </p>
           </div>
           <div className="flex flex-col items-center text-center gap-3">
-            <span className="p-3 rounded-2xl bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400">
+            <span className="p-3 rounded-2xl bg-red-100 dark:bg-red-900/40 text-[#ff3131] dark:text-[#ff3131]">
               <IoCodeOutline size={22} />
             </span>
             <h3 className="font-bold text-gray-900 dark:text-white">You control cookies</h3>
@@ -186,7 +186,7 @@ export default function PrivacyPolicyPage() {
             </p>
           </div>
           <div className="flex flex-col items-center text-center gap-3">
-            <span className="p-3 rounded-2xl bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400">
+            <span className="p-3 rounded-2xl bg-red-100 dark:bg-red-900/40 text-[#ff3131] dark:text-[#ff3131]">
               <IoRefreshOutline size={22} />
             </span>
             <h3 className="font-bold text-gray-900 dark:text-white">Updates are rare</h3>
@@ -210,7 +210,7 @@ export default function PrivacyPolicyPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/legal/contact"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-blue-300 dark:hover:shadow-blue-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#ff3131] hover:bg-[#e02b2b] text-white font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-red-300 dark:hover:shadow-red-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff3131] focus-visible:ring-offset-2"
             >
               Go to Contact Page <IoArrowForward size={16} />
             </Link>

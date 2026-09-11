@@ -32,7 +32,7 @@ export const Footer: FunctionComponent = () => {
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-gray-100 dark:border-gray-800">
           <div className="text-sm text-gray-400 dark:text-gray-500 order-2 sm:order-1">
-            © <span>iknowtechworld</span> {new Date().getFullYear()}
+            © <span>I Know Tech World</span> {new Date().getFullYear()}
           </div>
           <div className="order-1 sm:order-2">
             <DarkModeToggle />

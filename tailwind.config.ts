@@ -78,6 +78,8 @@ const config = {
         sans: ["var(--font-sans)", ...fontFamily.sans],
         // Script font (Style Script)
         script: ["var(--font-script)", "cursive", "Brush Script MT", "Georgia"],
+        // Custom Extenda font
+        extenda: ["var(--font-extenda)"],
         // Optional: Keep mono for code blocks
         mono: ["var(--font-mono)", ...fontFamily.mono],
       },

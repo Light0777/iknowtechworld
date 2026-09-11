@@ -26,7 +26,7 @@ const DISCLAIMER_SECTIONS = [
   {
     icon: <IoWarningOutline size={22} />,
     title: 'Professional Disclaimer',
-    body: 'The content on this website should not be considered professional financial, legal, medical, or technical advice. Users should conduct their own research before making purchasing or technical decisions.',
+    body: 'The content on this website should not be considered professional financial, legal, medical, or technical advice. Users should conduct their own research before making purchasing or gaming decisions.',
   },
   {
     icon: <IoCashOutline size={22} />,
@@ -90,7 +90,7 @@ export default function DisclaimerPage() {
 
         <div className="relative max-w-4xl mx-auto px-4 pt-20 pb-16 text-center">
           {/* Eyebrow */}
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-4">
+          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#ff3131] dark:text-[#ff3131] mb-4">
             Legal
           </span>
 
@@ -98,7 +98,7 @@ export default function DisclaimerPage() {
             <span className="text-amber-600 dark:text-amber-500">Disclaimer.</span>
             <br />
             Read{' '}
-            <span className="text-blue-600 dark:text-blue-400">before you act.</span>
+            <span className="text-[#ff3131] dark:text-[#ff3131]">before you act.</span>
           </h1>
 
           <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
@@ -115,7 +115,7 @@ export default function DisclaimerPage() {
         <div className="max-w-4xl mx-auto px-4 py-10 grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
           {STATS.map(({ value, label }) => (
             <div key={label}>
-              <p className="text-3xl font-extrabold text-blue-600 dark:text-blue-400 tabular-nums">
+              <p className="text-3xl font-extrabold text-[#ff3131] dark:text-[#ff3131] tabular-nums">
                 {value}
               </p>
               <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{label}</p>
@@ -128,7 +128,7 @@ export default function DisclaimerPage() {
       <section className="border-t border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/40">
         <div className="max-w-4xl mx-auto px-4 py-16">
           <div className="text-center mb-10">
-            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">
+            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#ff3131] dark:text-[#ff3131] mb-3">
               Please read carefully
             </span>
             <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white">
@@ -157,7 +157,7 @@ export default function DisclaimerPage() {
       {/* ── KEY POINTS (similar to Values section on About page) ──────── */}
       <section className="max-w-4xl mx-auto px-4 py-16">
         <div className="text-center mb-10">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">
+          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#ff3131] dark:text-[#ff3131] mb-3">
             The bottom line
           </span>
           <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white">
@@ -217,10 +217,10 @@ export default function DisclaimerPage() {
               <div className="absolute inset-0 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-lg p-6 flex flex-col justify-between">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-amber-600 flex items-center justify-center text-white font-bold text-sm">
-                    ik
+                    IK
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-gray-900 dark:text-white">iknowtechworld</p>
+                    <p className="text-sm font-bold text-gray-900 dark:text-white">I Know Tech World</p>
                     <p className="text-xs text-gray-400">iknowtechworld.online</p>
                   </div>
                 </div>
@@ -261,7 +261,7 @@ export default function DisclaimerPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/legal/privacy-policy"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-blue-300 dark:hover:shadow-blue-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#ff3131] hover:bg-[#e02b2b] text-white font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-red-300 dark:hover:shadow-red-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff3131] focus-visible:ring-offset-2"
             >
               Read Privacy Policy <IoArrowForward size={16} />
             </Link>

@@ -56,15 +56,15 @@ export async function generateMetadata(props: { params: Promise<Params> }) {
       ],
       type: "article",
       publishedTime: result.post.publishedAt?.toString(),
-      authors: [result.post.author?.name || "iknowtechworld Team"],
+      authors: [result.post.author?.name || "I Know Tech World Team"],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
       images: [ogImageUrl],
-      creator: "@iknowtechworld",
-      site: "@iknowtechworld",
+      creator: "@gamevault",
+      site: "@gamevault",
     },
     alternates: {
       canonical: `${siteUrl}/blog/${slug}`,
@@ -98,12 +98,12 @@ const Page = async (props: { params: Promise<Params> }) => {
     dateModified: updatedAt.toString(),
     author: {
       "@type": "Person",
-      name: author.name ?? "iknowtechworld Team",
+      name: author.name ?? "I Know Tech World Team",
       image: author.image ?? undefined,
     },
     publisher: {
       "@type": "Organization",
-      name: "iknowtechworld",
+      name: "I Know Tech World",
       logo: {
         "@type": "ImageObject",
         url: `${process.env.NEXT_PUBLIC_BASE_URL || "https://www.iknowtechworld.online"}/favicon.ico`,
@@ -137,7 +137,7 @@ const Page = async (props: { params: Promise<Params> }) => {
                   height={16}
                   className="h-4 w-4 rounded-full"
                 />
-                {author?.name || 'iknowtechworld Team'}
+                {author?.name || 'I Know Tech World Team'}
               </span>
             </div>
           </div>

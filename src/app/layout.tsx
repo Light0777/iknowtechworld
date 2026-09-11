@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter, Style_Script } from "next/font/google";
+import localFont from "next/font/local";
 import { Providers } from "@/app/providers";
 import { Toaster } from "@/components/ui/toaster";
 import Navbar from "./navbar";
@@ -26,14 +27,22 @@ const fontScript = Style_Script({
   weight: ["400"],
 });
 
+// Custom local font Extenda
+const fontExtenda = localFont({
+  src: "../../public/fonts/extenda-100-yotta.ttf",
+  variable: "--font-extenda",
+  display: "swap",
+  weight: "100 900",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.iknowtechworld.online"),
   title: {
     default: process.env.NEXT_PUBLIC_BLOG_DISPLAY_NAME || "I Know Tech World",
     template: "%s | I Know Tech World",
   },
-  description: "Smart tech guides, gaming builds, and digital trends that actually help. Helping regular people make better tech decisions.",
-  keywords: ["tech blog india", "budget gaming pc", "gta 6 setup", "buying guides", "gadget recommendations", "AI tools", "tech trends", "beginner tech guides", "smart purchases"],
+  description: "Your ultimate gaming blog - game reviews, walkthroughs, tips, news, and everything worth knowing about the games you play. From AAA titles to indie gems.",
+  keywords: ["gaming blog", "game reviews", "game guides", "walkthroughs", "gaming tips", "video game news", "indie games", "AAA games", "gaming strategies", "game walkthroughs"],
   authors: [{ name: "I Know Tech World Team" }],
   creator: "I Know Tech World",
   publisher: "I Know Tech World Media",
@@ -49,25 +58,25 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "I Know Tech World | Smart Tech Guides & Gaming Builds",
-    description: "Practical buying guides, budget PC setups, gadget recommendations, AI tools, and tech insights — explained simply.",
+    title: "I Know Tech World | Gaming Blog - Reviews, Guides & Everything About Games",
+    description: "Your ultimate gaming blog - game reviews, walkthroughs, tips, news, and everything worth knowing about the games you play.",
     url: "https://www.iknowtechworld.online",
     siteName: "I Know Tech World",
-    locale: "en_IN",
+    locale: "en_US",
     type: "website",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "I Know Tech World - Smart Tech Guides That Actually Help",
+        alt: "I Know Tech World - Your Gaming Blog for Reviews, Guides & News",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "I Know Tech World | Tech Guides & Gaming Builds",
-    description: "Helping regular people make better tech decisions.",
+    title: "I Know Tech World | Gaming Blog - Reviews, Guides & News",
+    description: "Your ultimate gaming blog - game reviews, walkthroughs, tips, news, and everything worth knowing about the games you play.",
     images: ["/og-image.jpg"],
     creator: "@iknowtechworld",
   },
@@ -77,7 +86,7 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
-  category: "technology",
+  category: "games",
 };
 
 export default function RootLayout({
@@ -118,7 +127,8 @@ export default function RootLayout({
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable,
-          fontScript.variable
+          fontScript.variable,
+          fontExtenda.variable
         )}
       >
         <Providers>

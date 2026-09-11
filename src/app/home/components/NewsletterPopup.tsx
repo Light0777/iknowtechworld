@@ -38,27 +38,27 @@ export default function NewsletterPopup() {
                 </button>
 
                 <div className="space-y-4">
-                    <span className="inline-flex px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-xs font-semibold">
+                    <span className="inline-flex px-3 py-1 rounded-full bg-red-100 dark:bg-red-900/40 text-[#ff3131] dark:text-[#ff3131] text-xs font-semibold">
                         Free Weekly Newsletter
                     </span>
 
                     <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white leading-tight">
-                        Get Budget Tech & Setup Ideas Weekly
+                        Get Game Reviews & Tips Weekly
                     </h2>
 
                     <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
-                        Gaming setups, creator gear, student gadgets, and budget tech picks — no spam.
+                        Honest reviews, walkthroughs, gaming news, and pro tips — delivered to your inbox.
                     </p>
 
                     <Link
                         href="https://news.iknowtechworld.online"
-                        className="block w-full text-center rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 transition"
+                        className="block w-full text-center rounded-2xl bg-[#ff3131] hover:bg-[#e02b2b] text-white font-semibold py-3 transition"
                     >
                         Join Free
                     </Link>
 
                     <p className="text-xs text-center text-gray-400">
-                        Join early readers of IKnowTechWorld
+                        Join thousands of gamers
                     </p>
                 </div>
             </div>

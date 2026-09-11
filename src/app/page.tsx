@@ -6,21 +6,21 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "I Know Tech World | Smart Tech Guides, Gaming Builds & Digital Trends That Actually Help",
-  description: "Tech blog featuring honest buying guides, budget gaming PC builds, gadget recommendations, AI tools, and practical technology advice for everyday users, students, and gamers in India.",
+  title: "I Know Tech World | Gaming Blog - Reviews, Guides, Walkthroughs & Gaming News",
+  description: "Your ultimate gaming blog - game reviews, walkthroughs, tips, news, and everything worth knowing about the games you play. From AAA titles to indie gems.",
   keywords: [
-    "tech blog india",
-    "budget gaming pc",
-    "gta 6 setup",
-    "buying guides",
-    "gadget recommendations",
-    "AI tools",
-    "tech trends",
-    "beginner tech guides",
-    "smart purchases",
-    "pc build india",
-    "gaming accessories",
-    "digital marketing tips"
+    "gaming blog",
+    "game reviews",
+    "game guides",
+    "walkthroughs",
+    "gaming tips",
+    "video game news",
+    "indie games",
+    "AAA games",
+    "gaming strategies",
+    "game walkthroughs",
+    "gaming news",
+    "best games"
   ],
   authors: [{ name: "I Know Tech World Team" }],
   creator: "I Know Tech World",
@@ -37,25 +37,25 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "I Know Tech World | Smart Tech Guides That Actually Help",
-    description: "Practical buying guides, budget PC setups, gadget recommendations, AI tools, and tech insights — explained simply. Helping regular people make better tech decisions.",
+    title: "I Know Tech World | Gaming Blog - Reviews, Guides & Everything About Games",
+    description: "Your ultimate gaming blog - game reviews, walkthroughs, tips, news, and everything worth knowing about the games you play.",
     url: "https://www.iknowtechworld.online",
     siteName: "I Know Tech World",
-    locale: "en_IN",
+    locale: "en_US",
     type: "website",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "I Know Tech World - Smart Tech Guides",
+        alt: "I Know Tech World - Your Gaming Blog for Reviews, Guides & News",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "I Know Tech World | Tech Guides & Gaming Builds",
-    description: "Helping regular people make better tech decisions.",
+    title: "I Know Tech World | Gaming Blog - Reviews, Guides & News",
+    description: "Your ultimate gaming blog - game reviews, walkthroughs, tips, news, and everything worth knowing about the games you play.",
     images: ["/og-image.jpg"],
     creator: "@iknowtechworld",
     site: "@iknowtechworld",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.iknowtechworld.online",
   },
-  category: "technology",
+  category: "games",
 };
 
 const Page = async (
@@ -90,7 +90,7 @@ const Page = async (
             "@type": "WebSite",
             "name": "I Know Tech World",
             "url": "https://www.iknowtechworld.online",
-            "description": "Smart tech guides, gaming builds, and digital trends that actually help. Helping regular people make better tech decisions.",
+            "description": "Your ultimate gaming blog - game reviews, walkthroughs, tips, news, and everything worth knowing about the games you play.",
             "potentialAction": {
               "@type": "SearchAction",
               "target": {

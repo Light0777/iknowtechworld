@@ -14,6 +14,7 @@ import {
   IoRocketOutline,
   IoTrendingUpOutline,
   IoCheckmarkCircleOutline,
+  IoFlashOutline,
 } from 'react-icons/io5'
 
 // ─── Contact Email ─────────────────────────────────────────────────────────
@@ -22,39 +23,34 @@ const CONTACT_EMAIL = 'lightyagami7502@gmail.com'
 // ─── What We Cover topics (matching About page card style) ─────────────────
 const TOPICS_COVERED = [
   {
-    icon: <IoHardwareChipOutline size={22} />,
-    title: 'Technology',
-    body: 'Latest tech trends, reviews, and explainers in plain English.',
-  },
-  {
     icon: <IoGameControllerOutline size={22} />,
-    title: 'Gaming',
-    body: 'Game reviews, setups, and performance guides for real budgets.',
-  },
-  {
-    icon: <IoRocketOutline size={22} />,
-    title: 'Budget PC Builds',
-    body: 'Complete builds under ₹25K, ₹35K, ₹50K — no overspending.',
+    title: 'Game Reviews',
+    body: 'Honest, in-depth reviews of AAA blockbusters and hidden indie gems.',
   },
   {
     icon: <IoBulbOutline size={22} />,
-    title: 'AI Tools',
-    body: 'Practical AI that actually helps you study, create, and work faster.',
+    title: 'Walkthroughs & Guides',
+    body: 'Step-by-step guides for boss fights, collectibles, and 100% completion.',
+  },
+  {
+    icon: <IoFlashOutline size={22} />,
+    title: 'Gaming News & Tips',
+    body: 'Latest patches, meta changes, pro strategies, and insider tips.',
   },
   {
     icon: <IoTrendingUpOutline size={22} />,
-    title: 'Productivity',
-    body: 'Apps, workflows, and habits that get things done.',
+    title: 'Indie Spotlights',
+    body: 'Hidden gems and rising indie games that deserve your attention.',
   },
   {
-    icon: <IoSchoolOutline size={22} />,
-    title: 'Student Tech',
-    body: 'Gadgets and gear that won\'t wipe out your semester budget.',
+    icon: <IoRocketOutline size={22} />,
+    title: 'Game Strategies',
+    body: 'Meta builds, speedrun routes, and competitive play guides.',
   },
   {
     icon: <IoCheckmarkCircleOutline size={22} />,
-    title: 'Digital Trends',
-    body: 'What\'s worth knowing right now — no hype, just signal.',
+    title: 'Upcoming Releases',
+    body: 'Previews, release dates, and what to watch for each month.',
   },
 ]
 
@@ -84,13 +80,13 @@ export default function ContactPage() {
 
         <div className="relative max-w-4xl mx-auto px-4 pt-20 pb-16 text-center">
           {/* Eyebrow */}
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-4">
+          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#ff3131] dark:text-[#ff3131] mb-4">
             Get in touch
           </span>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-tight mb-6">
             Let's{' '}
-            <span className="text-blue-600 dark:text-blue-400">talk.</span>
+            <span className="text-[#ff3131] dark:text-[#ff3131]">talk.</span>
             <br />
             Questions?{' '}
             <span className="text-teal-500 dark:text-teal-400">Feedback?</span>
@@ -108,7 +104,7 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto px-4 py-10 grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
           {STATS.map(({ value, label }) => (
             <div key={label}>
-              <p className="text-3xl font-extrabold text-blue-600 dark:text-blue-400 tabular-nums">
+              <p className="text-3xl font-extrabold text-[#ff3131] dark:text-[#ff3131] tabular-nums">
                 {value}
               </p>
               <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{label}</p>
@@ -122,7 +118,7 @@ export default function ContactPage() {
         <div className="grid md:grid-cols-2 gap-10 items-stretch">
           {/* General Inquiries Text */}
           <div className="flex flex-col justify-center">
-            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">
+            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#ff3131] dark:text-[#ff3131] mb-3">
               Reach out
             </span>
             <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-4 leading-snug">
@@ -132,10 +128,10 @@ export default function ContactPage() {
               Have a question, collaboration idea, or just want to say hi?
             </p>
             <div className="flex items-center gap-3 text-lg">
-              <IoMailOutline className="text-blue-600 dark:text-blue-400" size={28} />
+              <IoMailOutline className="text-[#ff3131] dark:text-[#ff3131]" size={28} />
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                className="text-blue-600 dark:text-blue-400 hover:underline font-medium break-all"
+                className="text-[#ff3131] dark:text-[#ff3131] hover:underline font-medium break-all"
               >
                 {CONTACT_EMAIL}
               </a>
@@ -149,17 +145,17 @@ export default function ContactPage() {
           {/* Visual Card — similar to About page card stack */}
           <div className="relative h-72 md:h-auto hidden md:block">
             <div
-              className="absolute inset-x-4 top-2 h-full rounded-2xl bg-blue-100 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-900/60"
+              className="absolute inset-x-4 top-2 h-full rounded-2xl bg-red-100 dark:bg-red-950/40 border border-red-200 dark:border-red-900/60"
               style={{ transform: 'rotate(-1.5deg)' }}
               aria-hidden
             />
             <div className="absolute inset-0 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-lg p-6 flex flex-col justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-sm">
-                  ik
+                <div className="w-10 h-10 rounded-xl bg-[#ff3131] flex items-center justify-center text-white font-bold text-sm">
+                  IK
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-gray-900 dark:text-white">iknowtechworld</p>
+                  <p className="text-sm font-bold text-gray-900 dark:text-white">I Know Tech World</p>
                   <p className="text-xs text-gray-400">iknowtechworld.online</p>
                 </div>
               </div>
@@ -167,18 +163,18 @@ export default function ContactPage() {
                 <p className="text-sm text-gray-500 dark:text-gray-400">
                   We reply to every message personally. No auto-responders, no bots.
                 </p>
-                <div className="flex items-center gap-2 text-xs text-blue-600 dark:text-blue-400">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                <div className="flex items-center gap-2 text-xs text-[#ff3131] dark:text-[#ff3131]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#ff3131]" />
                   Usually within 24 hours
                 </div>
-                <div className="flex items-center gap-2 text-xs text-blue-600 dark:text-blue-400">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                <div className="flex items-center gap-2 text-xs text-[#ff3131] dark:text-[#ff3131]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#ff3131]" />
                   Never shared with third parties
                 </div>
               </div>
               <div className="flex items-center justify-between text-xs text-gray-400">
                 <span>Your privacy matters</span>
-                <span className="text-blue-600 dark:text-blue-400 font-semibold">We listen</span>
+                <span className="text-[#ff3131] dark:text-[#ff3131] font-semibold">We listen</span>
               </div>
             </div>
           </div>
@@ -189,14 +185,14 @@ export default function ContactPage() {
       <section className="border-t border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/40">
         <div className="max-w-4xl mx-auto px-4 py-16">
           <div className="text-center mb-10">
-            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">
+            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#ff3131] dark:text-[#ff3131] mb-3">
               Our focus
             </span>
             <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white">
               What we cover at I Know Tech World
             </h2>
             <p className="text-gray-500 dark:text-gray-400 mt-3 max-w-xl mx-auto">
-              We publish content across these topics — always honest, always budget-aware.
+              We publish content across these topics — always honest, always player-first.
             </p>
           </div>
 
@@ -206,7 +202,7 @@ export default function ContactPage() {
                 key={title}
                 className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 p-5 flex flex-col gap-2 hover:shadow-md transition-shadow duration-200"
               >
-                <span className="text-blue-600 dark:text-blue-400">{icon}</span>
+                <span className="text-[#ff3131] dark:text-[#ff3131]">{icon}</span>
                 <h3 className="font-bold text-gray-900 dark:text-white">{title}</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{body}</p>
               </div>
@@ -218,7 +214,7 @@ export default function ContactPage() {
       {/* ── RESPONSE TIME + REASSURANCE (similar to Values section) ───── */}
       <section className="max-w-4xl mx-auto px-4 py-16">
         <div className="text-center mb-10">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">
+          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#ff3131] dark:text-[#ff3131] mb-3">
             What to expect
           </span>
           <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white">
@@ -231,7 +227,7 @@ export default function ContactPage() {
 
         <div className="grid sm:grid-cols-3 gap-8">
           <div className="flex flex-col items-center text-center gap-3">
-            <span className="p-3 rounded-2xl bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400">
+            <span className="p-3 rounded-2xl bg-red-100 dark:bg-red-900/40 text-[#ff3131] dark:text-[#ff3131]">
               <IoTimeOutline size={22} />
             </span>
             <h3 className="font-bold text-gray-900 dark:text-white">24–72 hour response</h3>
@@ -240,7 +236,7 @@ export default function ContactPage() {
             </p>
           </div>
           <div className="flex flex-col items-center text-center gap-3">
-            <span className="p-3 rounded-2xl bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400">
+            <span className="p-3 rounded-2xl bg-red-100 dark:bg-red-900/40 text-[#ff3131] dark:text-[#ff3131]">
               <IoChatbubbleEllipsesOutline size={22} />
             </span>
             <h3 className="font-bold text-gray-900 dark:text-white">Real humans only</h3>
@@ -249,7 +245,7 @@ export default function ContactPage() {
             </p>
           </div>
           <div className="flex flex-col items-center text-center gap-3">
-            <span className="p-3 rounded-2xl bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400">
+            <span className="p-3 rounded-2xl bg-red-100 dark:bg-red-900/40 text-[#ff3131] dark:text-[#ff3131]">
               <IoMailOutline size={22} />
             </span>
             <h3 className="font-bold text-gray-900 dark:text-white">Your data stays private</h3>
@@ -273,7 +269,7 @@ export default function ContactPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/blogpage"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-blue-300 dark:hover:shadow-blue-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#ff3131] hover:bg-[#e02b2b] text-white font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-red-300 dark:hover:shadow-red-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff3131] focus-visible:ring-offset-2"
             >
               Browse articles <IoArrowForward size={16} />
             </Link>

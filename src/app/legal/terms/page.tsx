@@ -101,13 +101,13 @@ export default function TermsAndConditionsPage() {
 
         <div className="relative max-w-4xl mx-auto px-4 pt-20 pb-16 text-center">
           {/* Eyebrow */}
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-4">
+          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#ff3131] dark:text-[#ff3131] mb-4">
             Legal Agreement
           </span>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-tight mb-6">
             Terms and{' '}
-            <span className="text-blue-600 dark:text-blue-400">Conditions.</span>
+            <span className="text-[#ff3131] dark:text-[#ff3131]">Conditions.</span>
             <br />
             Read{' '}
             <span className="text-teal-500 dark:text-teal-400">before you browse.</span>
@@ -127,7 +127,7 @@ export default function TermsAndConditionsPage() {
         <div className="max-w-4xl mx-auto px-4 py-10 grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
           {STATS.map(({ value, label }) => (
             <div key={label}>
-              <p className="text-3xl font-extrabold text-blue-600 dark:text-blue-400 tabular-nums">
+              <p className="text-3xl font-extrabold text-[#ff3131] dark:text-[#ff3131] tabular-nums">
                 {value}
               </p>
               <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{label}</p>
@@ -140,7 +140,7 @@ export default function TermsAndConditionsPage() {
       <section className="border-t border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/40">
         <div className="max-w-4xl mx-auto px-4 py-16">
           <div className="text-center mb-10">
-            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">
+            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#ff3131] dark:text-[#ff3131] mb-3">
               Agreement details
             </span>
             <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white">
@@ -157,7 +157,7 @@ export default function TermsAndConditionsPage() {
                 key={title}
                 className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 p-6 flex flex-col gap-3 hover:shadow-md transition-shadow duration-200"
               >
-                <span className="text-blue-600 dark:text-blue-400">{icon}</span>
+                <span className="text-[#ff3131] dark:text-[#ff3131]">{icon}</span>
                 <h3 className="font-bold text-gray-900 dark:text-white text-lg">{title}</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{body}</p>
               </div>
@@ -169,7 +169,7 @@ export default function TermsAndConditionsPage() {
       {/* ── KEY POINTS (similar to Values section) ───────────────────── */}
       <section className="max-w-4xl mx-auto px-4 py-16">
         <div className="text-center mb-10">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">
+          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#ff3131] dark:text-[#ff3131] mb-3">
             In plain English
           </span>
           <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white">
@@ -183,7 +183,7 @@ export default function TermsAndConditionsPage() {
         <div className="grid sm:grid-cols-3 gap-8">
           {KEY_POINTS.map(({ icon, title, body }) => (
             <div key={title} className="flex flex-col items-center text-center gap-3">
-              <span className="p-3 rounded-2xl bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400">
+              <span className="p-3 rounded-2xl bg-red-100 dark:bg-red-900/40 text-[#ff3131] dark:text-[#ff3131]">
                 {icon}
               </span>
               <h3 className="font-bold text-gray-900 dark:text-white">{title}</h3>
@@ -198,7 +198,7 @@ export default function TermsAndConditionsPage() {
         <div className="max-w-4xl mx-auto px-4 py-16">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-block text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">
+              <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#ff3131] dark:text-[#ff3131] mb-3">
                 Important
               </span>
               <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-4 leading-snug">
@@ -208,7 +208,7 @@ export default function TermsAndConditionsPage() {
                 Every time you visit I Know Tech World, you're agreeing to these Terms and Conditions.
                 If you don't agree, please discontinue use of the website.
               </p>
-              <div className="mt-6 flex items-center gap-2 text-sm text-blue-600 dark:text-blue-400">
+              <div className="mt-6 flex items-center gap-2 text-sm text-[#ff3131] dark:text-[#ff3131]">
                 <IoCheckmarkCircleOutline size={18} />
                 <span>Continued use = continued agreement</span>
               </div>
@@ -217,42 +217,42 @@ export default function TermsAndConditionsPage() {
             {/* Visual card stack */}
             <div className="relative h-72 md:h-80 hidden md:block">
               <div
-                className="absolute inset-x-8 top-4 h-full rounded-2xl bg-blue-100 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900"
+                className="absolute inset-x-8 top-4 h-full rounded-2xl bg-red-100 dark:bg-red-950/60 border border-red-200 dark:border-red-900"
                 style={{ transform: 'rotate(3deg)' }}
                 aria-hidden
               />
               <div
-                className="absolute inset-x-4 top-2 h-full rounded-2xl bg-blue-50 dark:bg-blue-950/40 border border-blue-100 dark:border-blue-900/60"
+                className="absolute inset-x-4 top-2 h-full rounded-2xl bg-red-50 dark:bg-red-950/40 border border-red-100 dark:border-red-900/60"
                 style={{ transform: 'rotate(-1.5deg)' }}
                 aria-hidden
               />
               <div className="absolute inset-0 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-lg p-6 flex flex-col justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-sm">
-                    ik
+                  <div className="w-10 h-10 rounded-xl bg-[#ff3131] flex items-center justify-center text-white font-bold text-sm">
+                    IK
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-gray-900 dark:text-white">iknowtechworld</p>
+                    <p className="text-sm font-bold text-gray-900 dark:text-white">I Know Tech World</p>
                     <p className="text-xs text-gray-400">iknowtechworld.online</p>
                   </div>
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#ff3131] flex-shrink-0" />
                     Terms apply to all users
                   </div>
                   <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#ff3131] flex-shrink-0" />
                     Content is our intellectual property
                   </div>
                   <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#ff3131] flex-shrink-0" />
                     We may update terms anytime
                   </div>
                 </div>
                 <div className="flex items-center justify-between text-xs text-gray-400">
                   <span>Last updated: {LAST_UPDATED}</span>
-                  <span className="text-blue-600 dark:text-blue-400 font-semibold">Agree to continue</span>
+                  <span className="text-[#ff3131] dark:text-[#ff3131] font-semibold">Agree to continue</span>
                 </div>
               </div>
             </div>
@@ -273,7 +273,7 @@ export default function TermsAndConditionsPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/legal/contact"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-blue-300 dark:hover:shadow-blue-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#ff3131] hover:bg-[#e02b2b] text-white font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-red-300 dark:hover:shadow-red-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff3131] focus-visible:ring-offset-2"
             >
               Contact Us <IoArrowForward size={16} />
             </Link>

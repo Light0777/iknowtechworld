@@ -19,7 +19,7 @@ import {
 } from 'react-icons/io5'
 import WhatWeCover from './components/whatWeCover'
 import WhyTrustUs from './components/whyTrustUs'
-import BudgetPc from './components/budgetPc'
+import GamingHardware from './components/budgetPc'
 import FeaturedGuide from './components/featuredGuide'
 import NewsletterPopup from './components/NewsletterPopup'
 
@@ -73,13 +73,13 @@ async function getLatestPosts(limit = 4): Promise<WispPost[]> {
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 // Map the first tag of a post to a colour class
-// Palette is derived from the iknowtechworld logo (blue/teal/indigo family)
+// Palette is derived from the I Know Tech World brand (red/amber/teal family)
 function tagColor(tag?: string) {
     const map: Record<string, string> = {
-        gaming: 'bg-amber-100  text-amber-800  dark:bg-amber-900/40  dark:text-amber-300',
-        students: 'bg-blue-100   text-blue-800   dark:bg-blue-900/40   dark:text-blue-300',
-        ai: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-300',
-        tech: 'bg-teal-100   text-teal-800   dark:bg-teal-900/40   dark:text-teal-300',
+        reviews: 'bg-amber-100  text-amber-800  dark:bg-amber-900/40  dark:text-amber-300',
+        guides: 'bg-red-100 text-[#ff3131] dark:bg-red-900/40 dark:text-[#ff3131]',
+        news: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-300',
+        indie: 'bg-teal-100   text-teal-800   dark:bg-teal-900/40   dark:text-teal-300',
     }
     const key = (tag ?? '').toLowerCase()
     return map[key] ?? 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300'
@@ -108,7 +108,7 @@ function PostCard({ post, large = false }: { post: WispPost; large?: boolean }) 
     return (
         <Link
             href={`/blog/${post.slug}`}
-            className={`group relative flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${large ? 'md:flex-row' : ''}`}
+            className={`group relative flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff3131] ${large ? 'md:flex-row' : ''}`}
             aria-label={`Read article: ${post.title}`}
         >
             {/* Thumbnail */}
@@ -137,7 +137,7 @@ function PostCard({ post, large = false }: { post: WispPost; large?: boolean }) 
                     </span>
                 </div>
 
-                <h2 className={`font-bold text-gray-900 dark:text-white leading-snug group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors ${large ? 'text-xl md:text-2xl' : 'text-base'}`}>
+                <h2 className={`font-bold text-gray-900 dark:text-white leading-snug group-hover:text-[#ff3131] dark:group-hover:text-[#ff3131] transition-colors ${large ? 'text-xl md:text-2xl' : 'text-base'}`}>
                     {post.title}
                 </h2>
 
@@ -147,7 +147,7 @@ function PostCard({ post, large = false }: { post: WispPost; large?: boolean }) 
                     </p>
                 )}
 
-                <span className="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 dark:text-blue-400 mt-1">
+                <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#ff3131] dark:text-[#ff3131] mt-1">
                     Read article
                     <IoArrowForward size={14} className="transition-transform group-hover:translate-x-1" />
                 </span>
@@ -168,10 +168,10 @@ function EmptyState() {
 
 // ─── Category pills ───────────────────────────────────────────────────────────
 const CATEGORIES = [
-    { label: 'Gaming Builds', icon: <IoGameControllerOutline size={18} />, slug: 'gaming' },
-    { label: 'Student Gadgets', icon: <IoBulbOutline size={18} />, slug: 'students' },
-    { label: 'AI & Tools', icon: <IoChatbubblesOutline size={18} />, slug: 'ai' },
-    { label: 'Tech Guides', icon: <IoHardwareChipOutline size={18} />, slug: 'tech' },
+    { label: 'Game Reviews', icon: <IoGameControllerOutline size={18} />, slug: 'reviews' },
+    { label: 'Walkthroughs', icon: <IoBulbOutline size={18} />, slug: 'guides' },
+    { label: 'Gaming News', icon: <IoNewspaperOutline size={18} />, slug: 'news' },
+    { label: 'Indie Games', icon: <IoFlashOutline size={18} />, slug: 'indie' },
 ]
 
 const INFINITE_CATEGORIES = [...CATEGORIES, ...CATEGORIES, ...CATEGORIES];
@@ -195,51 +195,22 @@ export default async function Home() {
                         { icon: <IoFlashOutline size={16} />, text: 'Updated regularly' },
                     ].map(({ icon, text }) => (
                         <span key={text} className="sm:inline-flex items-center gap-1.5 hidden text-sm text-gray-500 dark:text-gray-400">
-                            <span className="text-blue-600">{icon}</span>
+                            <span className="text-[#ff3131]">{icon}</span>
                             {text}
                         </span>
                     ))}
                 </div>
 
                 <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-tight">
-                    Budget Tech Guides<br />
-                    <span className="text-blue-600 dark:text-blue-400">for Gamers & Students</span>
+                    Game Reviews & Guides<br />
+                    <span className="text-[#ff3131]">for Every Gamer</span>
                 </h1>
 
                 <p className="mt-4 text-xs sm:text-md text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
-                    Honest buying guides, gaming PC builds, and gadget picks all under a real budget.
+                    Honest game reviews, walkthroughs, tips, and news — everything worth knowing about the games you play.
                 </p>
 
-                {/* Category quick-nav */}
-                <div className="relative">
-                    {/* Left fade effect */}
-                    <div className="absolute -left-1 top-0 bottom-0 w-12 bg-gradient-to-r from-white dark:from-[#09090b] to-transparent z-10 pointer-events-none"></div>
-
-                    {/* Right fade effect */}
-                    <div className="absolute -right-1 top-0 bottom-0 w-12 bg-gradient-to-l from-white dark:from-[#09090b] to-transparent z-10 pointer-events-none"></div>
-
-                    <nav
-                        aria-label="Browse by category"
-                        className="mt-8 overflow-x-auto scrollbar-thin hide-scrollbar scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 hover:scrollbar-thumb-gray-400 dark:hover:scrollbar-thumb-gray-500"
-                        style={{
-                            scrollBehavior: 'smooth',
-                            WebkitOverflowScrolling: 'touch'
-                        }}
-                    >
-                        <div className="flex flex-nowrap gap-3 px-4 animate-scroll hover:animation-pause">
-                            {INFINITE_CATEGORIES.map(({ label, icon, slug }, index) => (
-                                <Link
-                                    key={`${slug}-${index}`}
-                                    href={`/blogpage?tag=${slug}`}
-                                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/60 text-sm font-medium text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 flex-shrink-0"
-                                >
-                                    <span className="text-blue-600 dark:text-blue-400">{icon}</span>
-                                    {label}
-                                </Link>
-                            ))}
-                        </div>
-                    </nav>
-                </div>
+            
             </section>
 
             {/* ── POSTS GRID ───────────────────────────────────────────────── */}
@@ -250,7 +221,7 @@ export default async function Home() {
                     </h2>
                     <Link
                         href="/blogpage"
-                        className="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1"
+                        className="text-sm font-semibold text-[#ff3131] dark:text-[#ff3131] hover:underline inline-flex items-center gap-1"
                     >
                         View all <IoArrowForward size={14} />
                     </Link>
@@ -282,7 +253,7 @@ export default async function Home() {
                 <div className="mt-10 text-center">
                     <Link
                         href="/blogpage"
-                        className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-blue-300 dark:hover:shadow-blue-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#ff3131] hover:bg-[#e02b2b] text-white font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-red-300 dark:hover:shadow-red-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff3131] focus-visible:ring-offset-2"
                     >
                         Browse all articles <IoArrowForward size={16} />
                     </Link>
@@ -291,7 +262,7 @@ export default async function Home() {
 
             <div>
                 <WhatWeCover />
-                <BudgetPc />
+                <GamingHardware />
                 <FeaturedGuide />
                 <WhyTrustUs />
             </div>
@@ -318,7 +289,7 @@ export default async function Home() {
                         },
                     ].map(({ icon, title, body }) => (
                         <div key={title} className="flex flex-col items-center gap-3">
-                            <span className="p-3 rounded-2xl bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400">
+                            <span className="p-3 rounded-2xl bg-red-100 dark:bg-red-900/40 text-[#ff3131] dark:text-[#ff3131]">
                                 {icon}
                             </span>
                             <h3 className="font-bold text-gray-900 dark:text-white">{title}</h3>

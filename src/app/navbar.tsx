@@ -55,9 +55,10 @@ export default function Navbar() {
                                     <Link
                                         href="/"
                                         className="text-md font-light text-black dark:text-white flex items-center gap-1"
-                                    ><Image src="/favicon.ico" alt="" width={4}
-                                        height={4} className="h-4 w-4" />
-                                        <span>{process.env.NEXT_PUBLIC_BLOG_DISPLAY_NAME}</span>
+                                    >
+                                        {/* <Image src="/favicon.ico" alt="" width={4}
+                                        height={4} className="h-4 w-4" /> */}
+                                        <span className="text-[#ff3131] font-inter font-bold" >{process.env.NEXT_PUBLIC_BLOG_DISPLAY_NAME}</span>
                                     </Link>
                                     {navItems.map((item) => {
                                         const isActive = pathname === item.href;
