@@ -76,6 +76,8 @@ const config = {
       fontFamily: {
         // Primary sans font (Inter)
         sans: ["var(--font-sans)", ...fontFamily.sans],
+        // Editorial serif (Newsreader) for Lens-style homepage headings
+        serif: ["var(--font-serif)", "Newsreader", "Georgia", ...fontFamily.serif],
         // Script font (Style Script)
         script: ["var(--font-script)", "cursive", "Brush Script MT", "Georgia"],
         // Custom Extenda font

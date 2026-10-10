@@ -1,6 +1,5 @@
 import { Footer } from "@/components/Footer";
 import Home from "./home/home";
-import Navbar from "./navbar";
 import AdUnit from "./components/AdUnit";
 import { Metadata } from "next";
 import Script from "next/script";
@@ -78,6 +77,10 @@ const Page = async (
   }
 ) => {
   const searchParams = await props.searchParams;
+  const rawPage = searchParams.page ? parseInt(searchParams.page as string, 10) : 1;
+  const page = Number.isNaN(rawPage) || rawPage < 1 ? 1 : rawPage;
+  const query =
+    typeof searchParams.query === "string" ? searchParams.query.trim() : "";
   return (
     <>
       <Script
@@ -115,10 +118,8 @@ const Page = async (
         }}
       />
       <div className="w-full mx-auto mb-10 overflow-hidden">
-        <Navbar />
-        
         {/* Main Homepage Content */}
-        <Home />
+        <Home page={page} query={query} />
         
         {/* Ad between homepage sections */}
         <div className="my-8 px-4">

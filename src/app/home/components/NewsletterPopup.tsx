@@ -47,7 +47,7 @@ export default function NewsletterPopup() {
                     </h2>
 
                     <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
-                        Honest reviews, walkthroughs, gaming news, and pro tips — delivered to your inbox.
+                        Honest reviews, walkthroughs, gaming news, and pro tips, delivered to your inbox.
                     </p>
 
                     <Link

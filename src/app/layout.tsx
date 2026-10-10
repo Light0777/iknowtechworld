@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Inter, Style_Script } from "next/font/google";
+import { Inter, Newsreader, Style_Script } from "next/font/google";
 import localFont from "next/font/local";
 import { Providers } from "@/app/providers";
 import { Toaster } from "@/components/ui/toaster";
@@ -16,6 +16,15 @@ const fontSans = Inter({
   variable: "--font-sans",
   display: "swap",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+});
+
+// Editorial serif for homepage headings (Lens-style)
+const fontSerif = Newsreader({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  display: "swap",
+  weight: ["400", "500"],
   style: ["normal", "italic"],
 });
 
@@ -127,6 +136,7 @@ export default function RootLayout({
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable,
+          fontSerif.variable,
           fontScript.variable,
           fontExtenda.variable
         )}

@@ -1,6 +1,7 @@
-// app/disclaimer/page.tsx
 import React from 'react'
 import Link from 'next/link'
+import Script from 'next/script'
+import type { Metadata } from 'next'
 import { Footer } from '@/components/Footer'
 import {
   IoArrowForward,
@@ -13,33 +14,67 @@ import {
   IoSearchOutline,
 } from 'react-icons/io5'
 
+const BASE_URL =
+  process.env.NEXT_PUBLIC_BASE_URL || 'https://www.iknowtechworld.online'
+
+export const metadata: Metadata = {
+  title: 'Disclaimer | I Know Tech World',
+  description:
+    'The content on I Know Tech World is for general informational and educational purposes only. Read our affiliate, external link, and liability disclaimers.',
+  keywords: [
+    'disclaimer',
+    'affiliate disclosure',
+    'I Know Tech World disclaimer',
+  ],
+  authors: [{ name: 'I Know Tech World Team' }],
+  creator: 'I Know Tech World',
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: 'Disclaimer | I Know Tech World',
+    description:
+      'For education only. Affiliate honesty. Do your own research before acting.',
+    url: `${BASE_URL}/legal/disclaimer`,
+    siteName: 'I Know Tech World',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Disclaimer | I Know Tech World',
+    description: 'For education only. Do your own research before acting.',
+  },
+  alternates: {
+    canonical: `${BASE_URL}/legal/disclaimer`,
+  },
+}
+
 // ─── Last Updated Date ──────────────────────────────────────────────────────
 const LAST_UPDATED = 'May 7, 2026'
 
 // ─── Disclaimer Sections ────────────────────────────────────────────────────
 const DISCLAIMER_SECTIONS = [
   {
-    icon: <IoScaleOutline size={22} />,
+    icon: <IoScaleOutline size={22} aria-hidden="true" />,
     title: 'General Information',
     body: 'The information provided on I Know Tech World is for general informational and educational purposes only. While we strive to provide accurate and updated information, we make no guarantees regarding the completeness, reliability, or accuracy of any content.',
   },
   {
-    icon: <IoWarningOutline size={22} />,
+    icon: <IoWarningOutline size={22} aria-hidden="true" />,
     title: 'Professional Disclaimer',
     body: 'The content on this website should not be considered professional financial, legal, medical, or technical advice. Users should conduct their own research before making purchasing or gaming decisions.',
   },
   {
-    icon: <IoCashOutline size={22} />,
+    icon: <IoCashOutline size={22} aria-hidden="true" />,
     title: 'Affiliate Disclaimer',
     body: 'Some articles may contain affiliate links. This means we may earn a small commission if you purchase products through those links, at no extra cost to you. These commissions help support the website.',
   },
   {
-    icon: <IoLinkOutline size={22} />,
+    icon: <IoLinkOutline size={22} aria-hidden="true" />,
     title: 'External Links Disclaimer',
     body: 'Our website may contain links to third-party websites. We are not responsible for the content, accuracy, or practices of external websites.',
   },
   {
-    icon: <IoShieldOutline size={22} />,
+    icon: <IoShieldOutline size={22} aria-hidden="true" />,
     title: 'Use at Your Own Risk',
     body: 'Any action you take based on information from this website is strictly at your own risk. I Know Tech World will not be liable for any losses or damages related to the use of our website.',
   },
@@ -53,227 +88,229 @@ const STATS = [
   { value: 'Honest', label: 'Our only policy' },
 ]
 
-// ─── Key Points (similar to Values section) ─────────────────────────────────
-const KEY_POINTS = [
-  {
-    icon: <IoDocumentTextOutline size={22} />,
-    title: 'For education only',
-    body: 'Our content is meant to inform and educate — not replace professional advice.',
-  },
-  {
-    icon: <IoCashOutline size={22} />,
-    title: 'Affiliate honesty',
-    body: 'We only recommend products we genuinely believe in. Commissions keep the lights on.',
-  },
-  {
-    icon: <IoSearchOutline size={22} />,
-    title: 'Do your own research',
-    body: 'Prices change, deals expire, and needs vary. Always double-check before buying.',
-  },
-]
+const EYEBROW = 'text-[11px] font-medium uppercase tracking-[0.08em]'
 
 export default function DisclaimerPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-[#09090b] transition-colors duration-300">
+    <div className="min-h-screen bg-white text-neutral-900 antialiased dark:bg-neutral-950 dark:text-neutral-100">
+      <Script
+        id="disclaimer-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: 'Disclaimer | I Know Tech World',
+            url: `${BASE_URL}/legal/disclaimer`,
+            description:
+              'General information, affiliate, external link, and liability disclaimers.',
+            dateModified: '2026-05-07',
+          }),
+        }}
+      />
 
-      {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden">
-        {/* Background accent — consistent gradient */}
-        <div
-          aria-hidden
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              'radial-gradient(ellipse 80% 60% at 50% -10%, rgba(37,99,235,0.10) 0%, transparent 70%)',
-          }}
-        />
-
-        <div className="relative max-w-4xl mx-auto px-4 pt-20 pb-16 text-center">
-          {/* Eyebrow */}
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#ff3131] dark:text-[#ff3131] mb-4">
+      <div className="mx-auto max-w-[1400px] px-4 md:px-[5.5rem]">
+        {/* ── HERO ─────────────────────────────────────────────── */}
+        <section
+          aria-labelledby="disclaimer-heading"
+          className="flex flex-col items-center px-6 pb-16 pt-14 text-center md:pb-20 md:pt-20"
+        >
+          <p className={`${EYEBROW} mb-5 text-neutral-700 dark:text-neutral-300`}>
             Legal
-          </span>
-
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-tight mb-6">
-            <span className="text-amber-600 dark:text-amber-500">Disclaimer.</span>
-            <br />
-            Read{' '}
-            <span className="text-[#ff3131] dark:text-[#ff3131]">before you act.</span>
+          </p>
+          <h1
+            id="disclaimer-heading"
+            className="max-w-3xl font-serif text-5xl leading-[1.12] tracking-tight text-balance md:text-[64px]"
+          >
+            Disclaimer
           </h1>
-
-          <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Last Updated: {LAST_UPDATED}
+          <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-400">
+            Last updated: {LAST_UPDATED}. The information provided on I Know
+            Tech World is for general informational and educational purposes
+            only.
           </p>
-          <p className="text-md text-gray-400 dark:text-gray-500 max-w-2xl mx-auto leading-relaxed mt-2">
-            The information provided on I Know Tech World is for general informational and educational purposes only.
-          </p>
-        </div>
-      </section>
+        </section>
 
-      {/* ── STATS BAR ────────────────────────────────────────────────── */}
-      <section className="border-y border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#09090b]">
-        <div className="max-w-4xl mx-auto px-4 py-10 grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
-          {STATS.map(({ value, label }) => (
-            <div key={label}>
-              <p className="text-3xl font-extrabold text-[#ff3131] dark:text-[#ff3131] tabular-nums">
-                {value}
-              </p>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+        {/* ── STATS ────────────────────────────────────────────── */}
+        <section
+          aria-label="Disclosure facts"
+          className="border-y border-neutral-200 py-10 dark:border-neutral-800"
+        >
+          <dl className="grid grid-cols-2 gap-8 text-center sm:grid-cols-4">
+            {STATS.map(({ value, label }) => (
+              <div key={label}>
+                <dt className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+                  {label}
+                </dt>
+                <dd className="font-serif text-4xl tracking-tight tabular-nums">
+                  {value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
 
-      {/* ── MAIN DISCLAIMER SECTIONS (card grid) ─────────────────────── */}
-      <section className="border-t border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/40">
-        <div className="max-w-4xl mx-auto px-4 py-16">
-          <div className="text-center mb-10">
-            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#ff3131] dark:text-[#ff3131] mb-3">
+        {/* ── SECTIONS ─────────────────────────────────────────── */}
+        <section
+          aria-labelledby="disclaimer-sections"
+          className="mt-24 border-t border-neutral-200 pt-16 dark:border-neutral-800"
+        >
+          <div className="mb-10 text-center">
+            <p className={`${EYEBROW} text-neutral-600 dark:text-neutral-400`}>
               Please read carefully
-            </span>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white">
+            </p>
+            <h2
+              id="disclaimer-sections"
+              className="mx-auto mt-2 max-w-xl font-serif text-4xl leading-tight tracking-tight text-balance"
+            >
               What you need to know
             </h2>
-            <p className="text-gray-500 dark:text-gray-400 mt-3 max-w-xl mx-auto">
-              Transparency is our policy. Here's the fine print — written in plain English.
+            <p className="mx-auto mt-3 max-w-xl text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-400">
+              Transparency is our policy. Here is the fine print, written in
+              plain English.
             </p>
           </div>
-
-          <div className="grid sm:grid-cols-2 gap-5">
+          <div className="grid gap-5 sm:grid-cols-2">
             {DISCLAIMER_SECTIONS.map(({ icon, title, body }) => (
               <div
                 key={title}
-                className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 p-6 flex flex-col gap-3 hover:shadow-md transition-shadow duration-200"
+                className="rounded-2xl border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-950"
               >
-                <span className="text-amber-600 dark:text-amber-500">{icon}</span>
-                <h3 className="font-bold text-gray-900 dark:text-white text-lg">{title}</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{body}</p>
+                <span className="text-neutral-900 dark:text-white">{icon}</span>
+                <h3 className="mt-2 font-serif text-xl leading-snug">{title}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+                  {body}
+                </p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ── KEY POINTS (similar to Values section on About page) ──────── */}
-      <section className="max-w-4xl mx-auto px-4 py-16">
-        <div className="text-center mb-10">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#ff3131] dark:text-[#ff3131] mb-3">
-            The bottom line
-          </span>
-          <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white">
-            We keep it real
-          </h2>
-          <p className="text-gray-500 dark:text-gray-400 mt-3 max-w-xl mx-auto">
-            No hidden agendas. No fake reviews. Just honest opinions and clear disclaimers.
-          </p>
-        </div>
-
-        <div className="grid sm:grid-cols-3 gap-8">
-          {KEY_POINTS.map(({ icon, title, body }) => (
-            <div key={title} className="flex flex-col items-center text-center gap-3">
-              <span className="p-3 rounded-2xl bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-500">
-                {icon}
-              </span>
-              <h3 className="font-bold text-gray-900 dark:text-white">{title}</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── WARNING / VISUAL CARD (similar to About page card stack) ──── */}
-      <section className="border-t border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/40">
-        <div className="max-w-4xl mx-auto px-4 py-16">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="inline-block text-xs font-semibold tracking-widest uppercase text-amber-600 dark:text-amber-500 mb-3">
-                Important note
-              </span>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-4 leading-snug">
-                Use at your own risk
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
-                Any action you take based on information from this website is strictly at your own risk.
-                I Know Tech World will not be liable for any losses or damages related to the use of our website.
-              </p>
-              <div className="mt-6 flex items-center gap-2 text-sm text-amber-600 dark:text-amber-500">
-                <IoWarningOutline size={18} />
-                <span>Always verify before making purchasing decisions</span>
-              </div>
-            </div>
-
-            {/* Visual card stack */}
-            <div className="relative h-72 md:h-80 hidden md:block">
-              <div
-                className="absolute inset-x-8 top-4 h-full rounded-2xl bg-amber-100 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-900"
-                style={{ transform: 'rotate(3deg)' }}
-                aria-hidden
-              />
-              <div
-                className="absolute inset-x-4 top-2 h-full rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-100 dark:border-amber-900/60"
-                style={{ transform: 'rotate(-1.5deg)' }}
-                aria-hidden
-              />
-              <div className="absolute inset-0 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-lg p-6 flex flex-col justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-amber-600 flex items-center justify-center text-white font-bold text-sm">
-                    IK
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold text-gray-900 dark:text-white">I Know Tech World</p>
-                    <p className="text-xs text-gray-400">iknowtechworld.online</p>
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0" />
-                    Prices change. Deals expire.
-                  </div>
-                  <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0" />
-                    Affiliate links = we earn a commission
-                  </div>
-                  <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0" />
-                    Your research = your responsibility
-                  </div>
-                </div>
-                <div className="flex items-center justify-between text-xs text-gray-400">
-                  <span>Transparency first</span>
-                  <span className="text-amber-600 dark:text-amber-500 font-semibold">Read carefully</span>
-                </div>
-              </div>
-            </div>
+        {/* ── KEY POINTS ───────────────────────────────────────── */}
+        <section
+          aria-labelledby="key-points"
+          className="mt-24 border-t border-neutral-200 pt-16 dark:border-neutral-800"
+        >
+          <div className="mb-10 text-center">
+            <p className={`${EYEBROW} text-neutral-600 dark:text-neutral-400`}>
+              The bottom line
+            </p>
+            <h2
+              id="key-points"
+              className="mt-2 font-serif text-4xl leading-tight tracking-tight text-balance"
+            >
+              We keep it real
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-400">
+              No hidden agendas. No fake reviews. Just honest opinions and
+              clear disclaimers.
+            </p>
           </div>
-        </div>
-      </section>
+          <div className="grid gap-8 sm:grid-cols-3">
+            {[
+              {
+                icon: <IoDocumentTextOutline size={22} aria-hidden="true" />,
+                title: 'For education only',
+                body: 'Our content is meant to inform and educate, not replace professional advice.',
+              },
+              {
+                icon: <IoCashOutline size={22} aria-hidden="true" />,
+                title: 'Affiliate honesty',
+                body: 'We only recommend products we genuinely believe in. Commissions keep the lights on.',
+              },
+              {
+                icon: <IoSearchOutline size={22} aria-hidden="true" />,
+                title: 'Do your own research',
+                body: 'Prices change, deals expire, and needs vary. Always double-check before buying.',
+              },
+            ].map(({ icon, title, body }) => (
+              <div
+                key={title}
+                className="flex flex-col items-center gap-3 text-center"
+              >
+                <span className="rounded-2xl bg-neutral-100 p-3 text-neutral-900 dark:bg-neutral-900 dark:text-white">
+                  {icon}
+                </span>
+                <h3 className="font-serif text-xl">{title}</h3>
+                <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+                  {body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
 
-      {/* ── CTA ──────────────────────────────────────────────────────── */}
-      <section className="border-t border-gray-100 dark:border-gray-800">
-        <div className="max-w-4xl mx-auto px-4 py-16 text-center">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-3">
+        {/* ── RISK NOTE ────────────────────────────────────────── */}
+        <section
+          aria-labelledby="risk-note"
+          className="mt-24 grid items-center gap-12 md:grid-cols-2 border-t border-neutral-200 pt-16 dark:border-neutral-800"
+        >
+          <div className="min-w-0">
+            <p className={`${EYEBROW} text-neutral-600 dark:text-neutral-400`}>
+              Important note
+            </p>
+            <h2
+              id="risk-note"
+              className="mt-2 font-serif text-4xl leading-tight tracking-tight text-balance"
+            >
+              Use at your own risk
+            </h2>
+            <p className="mt-4 text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-400">
+              Any action you take based on information from this website is
+              strictly at your own risk. I Know Tech World will not be liable
+              for any losses or damages related to the use of our website.
+            </p>
+            <p className="mt-6 flex items-center gap-2 text-sm font-medium text-neutral-900 dark:text-white">
+              <IoWarningOutline size={18} aria-hidden="true" />
+              Always verify before making purchasing decisions
+            </p>
+          </div>
+          <div
+            aria-hidden="true"
+            className="rounded-2xl border border-neutral-200 bg-neutral-100 p-6 dark:border-neutral-800 dark:bg-neutral-900"
+          >
+            <div className="space-y-3 text-sm text-neutral-700 dark:text-neutral-300">
+              <p>Prices change. Deals expire.</p>
+              <p>Affiliate links mean we earn a commission.</p>
+              <p>Your research is your responsibility.</p>
+            </div>
+            <p className="mt-6 text-xs text-neutral-500 dark:text-neutral-400">
+              Transparency first. Read carefully.
+            </p>
+          </div>
+        </section>
+
+        {/* ── CTA ──────────────────────────────────────────────── */}
+        <section
+          aria-labelledby="disclaimer-cta"
+          className="mt-24 flex flex-col items-center rounded-3xl bg-neutral-100 px-6 py-16 text-center dark:bg-neutral-900"
+        >
+          <h2
+            id="disclaimer-cta"
+            className="max-w-xl font-serif text-4xl leading-tight tracking-tight text-balance"
+          >
             Still have questions?
           </h2>
-          <p className="text-gray-500 dark:text-gray-400 mb-8 max-w-md mx-auto">
+          <p className="mt-3 max-w-md text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-400">
             Check out our Privacy Policy or reach out through our contact page.
           </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row">
             <Link
               href="/legal/privacy-policy"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#ff3131] hover:bg-[#e02b2b] text-white font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-red-300 dark:hover:shadow-red-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff3131] focus-visible:ring-offset-2"
+              className="inline-flex items-center gap-2 rounded-full bg-neutral-900 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-neutral-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
             >
-              Read Privacy Policy <IoArrowForward size={16} />
+              Read Privacy Policy <IoArrowForward size={16} aria-hidden="true" />
             </Link>
             <Link
               href="/legal/contact"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-gray-300 dark:border-gray-700 bg-white dark:bg-transparent text-gray-700 dark:text-gray-300 font-semibold text-sm hover:bg-gray-50 dark:hover:bg-gray-900 transition-all duration-200"
+              className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-7 py-3.5 text-sm font-semibold text-neutral-900 transition-colors hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 dark:border-neutral-700 dark:bg-transparent dark:text-white dark:hover:bg-neutral-800"
             >
               Contact Us
             </Link>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <Footer />
     </div>
