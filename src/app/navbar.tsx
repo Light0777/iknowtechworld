@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, X } from "lucide-react";
@@ -106,11 +107,16 @@ export default function Navbar() {
                     onClick={() => setIsOpen(!isOpen)}
                     aria-expanded={isOpen}
                     aria-label={isOpen ? "Close menu" : "Open menu"}
-                    className="flex items-center gap-3 rounded-full bg-neutral-900 py-3 pl-5 pr-4 text-white transition-colors hover:bg-neutral-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+                    className="flex items-center gap-2.5 rounded-full bg-neutral-900 py-2.5 pl-3 pr-3.5 text-white transition-colors hover:bg-neutral-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
                 >
-                    <span translate="no" className="font-serif text-lg leading-none tracking-tight">
-                        I Know Tech World
-                    </span>
+                    <Image
+                        src="/favicon.ico"
+                        alt="I Know Tech World"
+                        width={26}
+                        height={26}
+                        unoptimized
+                        className="rounded-[8px]"
+                    />
                     {isOpen ? (
                         <X size={20} aria-hidden="true" />
                     ) : (

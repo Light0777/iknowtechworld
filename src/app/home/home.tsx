@@ -343,37 +343,37 @@ export default async function Home({
         {/* ── HERO ─────────────────────────────────────────────── */}
         <section
           aria-labelledby="home-hero-heading"
-          className="flex flex-col items-center justify-center px-6 pb-16 pt-14 text-center md:pb-20 md:pt-20"
+          className="flex flex-col items-center justify-center px-4 pb-6 pt-8 text-center sm:px-6 md:pb-20 md:pt-20"
         >
-          <p className={`${EYEBROW} mb-5 text-neutral-700 dark:text-neutral-300`}>
+          <p className={`${EYEBROW} mb-3 text-neutral-700 md:mb-5 dark:text-neutral-300`}>
             Welcome to I Know Tech World
           </p>
           <h1
             id="home-hero-heading"
-            className="max-w-4xl font-serif text-5xl leading-[1.12] tracking-tight text-balance md:text-[68px]"
+            className="max-w-4xl font-serif text-[30px] leading-[1.2] tracking-tight text-balance sm:text-5xl md:text-[68px] md:leading-[1.12]"
           >
             Game reviews that{" "}
             <IoRocketOutline
               aria-hidden="true"
-              className="inline-block h-8 w-8 align-middle text-red-500"
+              className="inline-block h-[0.85em] w-[0.85em] align-[-0.1em] text-red-500"
             />{" "}
-            <span className="underline decoration-red-500 decoration-dashed decoration-2 underline-offset-8">
+            <span className="underline decoration-red-500 decoration-dashed decoration-2 underline-offset-4 md:underline-offset-8">
               inspire,
             </span>
-            <br />
+            <br className="hidden sm:block" />{" "}
             <IoBulbOutline
               aria-hidden="true"
-              className="inline-block h-8 w-8 align-middle text-sky-500"
+              className="inline-block h-[0.85em] w-[0.85em] align-[-0.1em] text-sky-500"
             />{" "}
-            <span className="underline decoration-sky-500 decoration-dashed decoration-2 underline-offset-8">
+            <span className="underline decoration-sky-500 decoration-dashed decoration-2 underline-offset-4 md:underline-offset-8">
               inform,
             </span>{" "}
             and{" "}
             <IoGameControllerOutline
               aria-hidden="true"
-              className="inline-block h-8 w-8 align-middle text-violet-400"
+              className="inline-block h-[0.85em] w-[0.85em] align-[-0.1em] text-violet-400"
             />{" "}
-            <span className="underline decoration-violet-300 decoration-dashed decoration-2 underline-offset-8">
+            <span className="underline decoration-violet-300 decoration-dashed decoration-2 underline-offset-4 md:underline-offset-8">
               entertain
             </span>
           </h1>
@@ -394,9 +394,6 @@ export default async function Home({
             >
               About us
             </Link>
-          </div>
-          <div className="mt-8 w-full max-w-md md:hidden">
-            <TopicFilter />
           </div>
         </section>
 
